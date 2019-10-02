@@ -1,0 +1,16 @@
+<h1>Posts</h1>
+
+<% if flash.key? :error %>
+    <h5><%= flash[:error] %></h5>
+<% end %>
+
+<section id="posts">
+  <% @posts.each do |post| %>
+  <article>
+    <h2><%= post[:title] %></h2>
+    <h4><%= post[:author] %></h4>
+    <%= image_tag post[:image_url] %>
+    <p><%= post[:content] %></p>
+  </article>
+  <% end %>
+</section>
